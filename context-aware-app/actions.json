@@ -1,0 +1,173 @@
+[
+  {
+    "action": {
+      "template": "${0}",
+      "type": "url"
+    },
+    "meta": {
+      "id": "builtin-url",
+      "name": "打开网址",
+      "version": "1.0.0"
+    },
+    "scope": {
+      "include": [
+        "*"
+      ],
+      "priority": 90
+    },
+    "trigger": {
+      "extraction_pattern": "(https?://|www\\.)[\\x21-\\x7e]+",
+      "pattern": "^.*(https?:\\/\\/|www\\.)([\\w_-]+(?:(?:\\.[\\w_-]+)+))([\\w.,@?^=%&:/~+#-]*[\\w@?^=%&/~+#-])?",
+      "type": "regex"
+    }
+  },
+  {
+    "action": {
+      "template": "",
+      "type": "doi_scihub"
+    },
+    "meta": {
+      "id": "builtin-doi",
+      "name": "打开DOI",
+      "version": "1.0.0"
+    },
+    "scope": {
+      "include": [
+        "*"
+      ],
+      "priority": 90
+    },
+    "trigger": {
+      "extraction_pattern": "10\\.\\d{4,9}/[-._;()/:a-zA-Z0-9]+",
+      "pattern": "\\b10\\.\\d{4,9}/[-._;()/:a-zA-Z0-9]+",
+      "type": "regex"
+    }
+  },
+  {
+    "action": {
+      "template": "${0}",
+      "type": "path"
+    },
+    "meta": {
+      "id": "builtin-path-windows",
+      "name": "打开文件路径",
+      "version": "1.0.0"
+    },
+    "scope": {
+      "include": [
+        "*"
+      ],
+      "priority": 90
+    },
+    "trigger": {
+      "extraction_pattern": "[a-zA-Z]:\\\\(?:[^\\\\/:*?\"<>|\\r\\n]+\\\\)*[^\\\\/:*?\"<>|\\r\\n]*",
+      "pattern": "^[a-zA-Z]:\\\\(?:[^\\\\/:*?\"<>|\\r\\n]+\\\\)*[^\\\\/:*?\"<>|\\r\\n]*$",
+      "type": "regex"
+    }
+  },
+  {
+    "action": {
+      "template": "",
+      "type": "ai_translate"
+    },
+    "meta": {
+      "id": "builtin-ai-translate",
+      "name": "翻译",
+      "version": "1.0.0"
+    },
+    "scope": {
+      "include": [
+        "*"
+      ],
+      "priority": 50
+    },
+    "trigger": {
+      "pattern": ".{5,}",
+      "type": "regex"
+    }
+  },
+  {
+    "action": {
+      "template": "",
+      "type": "ai_summarize"
+    },
+    "meta": {
+      "id": "builtin-ai-summarize",
+      "name": "总结",
+      "version": "1.0.0"
+    },
+    "scope": {
+      "include": [
+        "*"
+      ],
+      "priority": 50
+    },
+    "trigger": {
+      "pattern": ".{100,}",
+      "type": "regex"
+    }
+  },
+  {
+    "action": {
+      "template": "",
+      "type": "local_format"
+    },
+    "meta": {
+      "id": "builtin-local-format",
+      "name": "本地排版",
+      "version": "1.0.0"
+    },
+    "scope": {
+      "include": [
+        "*"
+      ],
+      "priority": 50
+    },
+    "trigger": {
+      "pattern": ".{50,}",
+      "type": "regex"
+    }
+  },
+  {
+    "action": {
+      "template": "format_text",
+      "type": "ai_process"
+    },
+    "meta": {
+      "id": "builtin-ai-format",
+      "name": "AI排版",
+      "version": "1.0.0"
+    },
+    "scope": {
+      "include": [
+        "*"
+      ],
+      "priority": 50
+    },
+    "trigger": {
+      "pattern": ".{50,}",
+      "type": "regex"
+    }
+  },
+  {
+    "action": {
+      "template": "https://www.google.com/search?q=${0}",
+      "type": "url"
+    },
+    "meta": {
+      "id": "builtin-google-search",
+      "name": "Google搜索",
+      "version": "1.0.0"
+    },
+    "scope": {
+      "include": [
+        "*"
+      ],
+      "priority": 40
+    },
+    "trigger": {
+      "pattern": ".+",
+      "type": "regex"
+    }
+  }
+]

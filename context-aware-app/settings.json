@@ -1,0 +1,21 @@
+{
+  "ai": {
+    "api_key": "sk-fd37f04a2c9645d5b6115a1d796e4130",
+    "base_url": "https://api.deepseek.com/v1",
+    "blacklist_apps": [
+      "password-manager.exe",
+      "1password.exe",
+      "bitwarden.exe",
+      "keepass.exe",
+      "banking-app.exe",
+      "secure-notes.exe"
+    ],
+    "enabled": true,
+    "model": "deepseek-chat"
+  },
+  "hotkeys": {
+    "trigger_key": "Ctrl",
+    "trigger_type": "double_press",
+    "trigger_interval": 400
+  }
+}
